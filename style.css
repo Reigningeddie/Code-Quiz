@@ -46,6 +46,10 @@ h1 {
     padding: 14px 40px;
 }
 
+.btn:hover {
+    background-color: #c394f8;
+}
+
 .btn:active {
     transform: scale(0.98);
 }
