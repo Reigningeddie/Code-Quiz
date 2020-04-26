@@ -7,16 +7,28 @@
     <title>Code Quiz</title>
 </head>
 <body>
-    <div class="container">
+        <!--Start Button-->
+        <div id="start" style="display: block;"> Start Quiz! </div>
+
+
+    <!--Quiz container-->
+    <div class="container" style="display: none;">
             <h1> Code Quiz</h1>
-            <div id="Questions">
-                //question goes here
-            </div>
-            <button id="A" class="btn"> </button>
-            <button id="B" class="btn"> </button>
-            <button id="C" class="btn"> </button>
-            <button id="D" class="btn"> </button>
+            <p id="questions">
+                question
+            </p>
+            <div id="answer-buttons" class="btn-grid">
+                <button id="A" class="btn" onClick="checkAnswer('A')">Answer A</button>
+                <button id="B" class="btn" onClick="checkAnswer('B')">Answer B</button>
+                <button id="C" class="btn" onClick="checkAnswer('C')">Answer C</button>
+                <button id="D" class="btn" onClick="checkAnswer('D')">Answer D</button>
+        </div>
     </div>
-    
+
+    <!--ScoreBoard-->
+    <div id="score" style="display: none;">
+
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
