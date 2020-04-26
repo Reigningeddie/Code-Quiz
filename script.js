@@ -46,12 +46,14 @@ let runningQuestion = 0;
 
 startBtn.addEventListener('click', startGame);
 
-setInterval(updateCountdown, 1000);
+
 
 function startGame() {
     startBtn.setAttribute('style', 'display: none;');
     renderQuestion();
-    content.setAttribute('style', 'display: block;')
+    content.setAttribute('style', 'display: block;');
+    setInterval(updateCountdown, 1000);
+setTimeout(renderQuestion, 1000);
 }
 
 function updateCountdown() {
@@ -61,6 +63,7 @@ function updateCountdown() {
     countdownEl.innerHTML = minutes + ':' + seconds;
     time--;
 }
+
 
 function renderQuestion() {
 
