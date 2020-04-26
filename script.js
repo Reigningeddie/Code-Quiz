@@ -1,12 +1,14 @@
 const content = document.querySelector('.container');
 const questionEl = document.getElementById('questions');
-const Next = document.getElementsByClassName('btn');
 const startBtn = document.getElementById('start');
 const scoreEl = document.getElementById('score');
 const A = document.getElementById('A');
 const B = document.getElementById('B');
 const C = document.getElementById('C');
 const D = document.getElementById('D');
+const startTime = 1;
+let time = startTime * 60;
+let countdownEl = document.getElementById('countdown');
 let scoreCount = 0;
 let questions = [
     {
@@ -44,11 +46,22 @@ let runningQuestion = 0;
 
 startBtn.addEventListener('click', startGame);
 
+setInterval(updateCountdown, 1000);
+
 function startGame() {
     startBtn.setAttribute('style', 'display: none;');
     renderQuestion();
     content.setAttribute('style', 'display: block;')
 }
+
+function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    countdownEl.innerHTML = minutes + ':' + seconds;
+    time--;
+}
+
 function renderQuestion() {
 
     let q = questions[runningQuestion];
